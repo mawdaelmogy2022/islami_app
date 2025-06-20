@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/ui/home/taps/azkar/azkar_body.dart';
+import 'package:islami_app/ui/home/taps/hadeth/hadeth_body.dart';
+import 'package:islami_app/ui/home/taps/quran/quran_body.dart';
+import 'package:islami_app/ui/home/taps/radio/radio_body.dart';
+import 'package:islami_app/ui/home/taps/tasbeeh/tasbeeh_body.dart';
 import 'package:islami_app/utils/app_colors.dart';
 import 'package:islami_app/utils/app_images.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'HomeScreen';
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -12,17 +17,38 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int selectedindex = 0;
+  List<String> imagesBG = [
+    AppImages.quranbg,
+    AppImages.hadethbg,
+    AppImages.azkarbg,
+    AppImages.radiobg,
+    AppImages.azkarbg,
+  ];
+  List<Widget> tapsBody = const [
+    QuranBody(),
+    HadethBody(),
+    TasbeehBody(),
+    RadioBody(),
+    AzkarBody(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Image.asset(
-          AppImages.quranbg,
+          imagesBG[selectedindex],
           width: double.infinity,
           height: double.infinity,
           fit: BoxFit.fill,
         ),
         Scaffold(
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Image.asset(AppImages.logo),
+              Expanded(child: tapsBody[selectedindex]),
+            ],
+          ),
           bottomNavigationBar: Theme(
             data:
                 Theme.of(context).copyWith(canvasColor: AppColors.primaryColor),

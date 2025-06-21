@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/ui/home/taps/quran/details/details_screen.dart';
+import 'package:islami_app/ui/home/taps/quran/details1/sura_details_screen1.dart';
 import 'package:islami_app/ui/home/taps/quran/sura_item.dart';
 import 'package:islami_app/utils/app_colors.dart';
 import 'package:islami_app/utils/app_images.dart';
 import 'package:islami_app/utils/app_style.dart';
 
-class QuranBody extends StatelessWidget {
-  const QuranBody({super.key});
+class QuranTap extends StatelessWidget {
+  const QuranTap({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -101,7 +101,7 @@ class QuranBody extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, SuraDetailsScreen.routeName,
+                      Navigator.pushNamed(context, SuraDetailsScreen1.routeName,
                           arguments: index);
                     },
                     child: SuraItem(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/ui/home/taps/azkar/azkar_body.dart';
 import 'package:islami_app/ui/home/taps/hadeth/hadeth_body.dart';
-import 'package:islami_app/ui/home/taps/quran/quran_body.dart';
+import 'package:islami_app/ui/home/taps/quran/quran_tap.dart';
 import 'package:islami_app/ui/home/taps/radio/radio_body.dart';
 import 'package:islami_app/ui/home/taps/tasbeeh/tasbeeh_body.dart';
 import 'package:islami_app/utils/app_colors.dart';
@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
     AppImages.azkarbg,
   ];
   List<Widget> tapsBody = const [
-    QuranBody(),
+    QuranTap(),
     HadethBody(),
     TasbeehBody(),
     RadioBody(),

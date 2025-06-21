@@ -81,7 +81,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen2> {
         .where((line) => line.isNotEmpty) // استبعد السطور الفاضية
         .toList();
     for (int i = 0; i < lines.length; i++) {
-      lines[i] += '[${index + 1}]';
+      lines[i] += '[${i + 1}]';
     }
     content = lines.join();
     // verses = lines;

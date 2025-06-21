@@ -7,11 +7,15 @@ class SuraContentItem2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
     return SingleChildScrollView(
-      child: Text(
-        ' $versecontent',
-        textAlign: TextAlign.center,
-        style: AppStyle.primary20,
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: width * .04),
+        child: Text(
+          ' $versecontent',
+          textDirection: TextDirection.rtl,
+          style: AppStyle.primary20,
+        ),
       ),
     );
   }

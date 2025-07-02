@@ -25,4 +25,9 @@ class AppImages {
       'assets/images/onboarding_screen4.png';
   static const String onboardingScreen5 =
       'assets/images/onboarding_screen5.png';
+  static const String hadithCornerLeft = 'assets/images/hadith_corner_left.png';
+  static const String hadithCornerright =
+      'assets/images/hadith_corner_right.png';
+  static const String hadithitembackground =
+      'assets/images/hadith_item_background.png';
 }

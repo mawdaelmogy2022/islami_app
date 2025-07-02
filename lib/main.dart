@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/ui/home/home_screen.dart';
+import 'package:islami_app/ui/home/taps/hadeth/hadith_details_screen.dart';
 import 'package:islami_app/ui/home/taps/quran/details1/sura_details_screen1.dart';
 import 'package:islami_app/ui/home/taps/quran/details2/sura_details_screen2.dart';
 import 'package:islami_app/ui/introduction%20_screen/intoduction_screen.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         HomeScreen.routeName: (context) => HomeScreen(),
         SuraDetailsScreen1.routeName: (context) => SuraDetailsScreen1(),
         SuraDetailsScreen2.routeName: (context) => SuraDetailsScreen2(),
+        HadithDetailsScreen.routeName: (context) => HadithDetailsScreen(),
       },
     );
   }

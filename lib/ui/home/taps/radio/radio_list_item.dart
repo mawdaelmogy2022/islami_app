@@ -33,45 +33,45 @@ class _RadioListItemState extends State<RadioListItem> {
                 : Image.asset(
                     AppImages.soundplayImage,
                   ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: height * .02),
-              child: Column(
-                children: [
-                  Text(
+            Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(top: height * .01),
+                  child: Text(
                     'Radio Ibrahim Al-Akdar',
                     style: AppStyle.black20,
                   ),
-                  const Spacer(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      IconButton(
-                          onPressed: () {
-                            soundplay = true;
-                            setState(() {});
-                          },
-                          icon: const Icon(
-                            Icons.play_arrow,
-                            color: AppColors.blackColor,
-                            size: 36,
-                          )),
-                      IconButton(
-                          onPressed: () {},
-                          icon: soundplay == false
-                              ? const Icon(
-                                  Icons.volume_down,
-                                  color: AppColors.blackColor,
-                                  size: 36,
-                                )
-                              : const Icon(
-                                  Icons.volume_off,
-                                  color: AppColors.blackColor,
-                                  size: 36,
-                                )),
-                    ],
-                  )
-                ],
-              ),
+                ),
+                const Spacer(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconButton(
+                        onPressed: () {
+                          soundplay = true;
+                          setState(() {});
+                        },
+                        icon: const Icon(
+                          Icons.play_arrow,
+                          color: AppColors.blackColor,
+                          size: 36,
+                        )),
+                    IconButton(
+                        onPressed: () {},
+                        icon: soundplay == false
+                            ? const Icon(
+                                Icons.volume_down,
+                                color: AppColors.blackColor,
+                                size: 36,
+                              )
+                            : const Icon(
+                                Icons.volume_off,
+                                color: AppColors.blackColor,
+                                size: 36,
+                              )),
+                  ],
+                )
+              ],
             ),
           ],
         ));

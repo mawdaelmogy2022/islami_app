@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/ui/home/taps/quran/details1/sura_details_screen1.dart';
+import 'package:islami_app/ui/home/taps/quran/quran_resourses.dart';
 import 'package:islami_app/ui/home/taps/quran/sura_item.dart';
 import 'package:islami_app/utils/app_colors.dart';
 import 'package:islami_app/utils/app_images.dart';
 import 'package:islami_app/utils/app_style.dart';
 
-class QuranTap extends StatelessWidget {
-  const QuranTap({super.key});
+class QuranTap extends StatefulWidget {
+  QuranTap({super.key});
+
+  @override
+  State<QuranTap> createState() => _QuranTapState();
+}
+
+class _QuranTapState extends State<QuranTap> {
+  List<int> filterList = List.generate(114, (index) => index);
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +26,10 @@ class QuranTap extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           TextField(
+            onChanged: (newtext) {
+              searchByNewText(newtext);
+            },
+            style: AppStyle.white16,
             cursorColor: AppColors.primaryColor,
             decoration: InputDecoration(
               prefixIcon: Image.asset(AppImages.iconsearch),
@@ -97,15 +109,15 @@ class QuranTap extends StatelessWidget {
           Expanded(
             child: ListView.builder(
                 padding: EdgeInsets.zero,
-                itemCount: 114,
+                itemCount: filterList.length,
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
                       Navigator.pushNamed(context, SuraDetailsScreen1.routeName,
-                          arguments: index);
+                          arguments: filterList[index]);
                     },
                     child: SuraItem(
-                      index: index,
+                      index: filterList[index],
                     ),
                   );
                 }),
@@ -113,6 +125,22 @@ class QuranTap extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void searchByNewText(String newtext) {
+    List<int> filtersearchlist = [];
+    for (int i = 0; i < QuranResourses.arabicsuraname.length; i++) {
+      if (QuranResourses.arabicsuraname[i].contains(newtext)) {
+        filtersearchlist.add(i);
+      }
+      if (QuranResourses.englishsuraname[i]
+          .toLowerCase()
+          .contains(newtext.toLowerCase())) {
+        filtersearchlist.add(i);
+      }
+    }
+    filterList = filtersearchlist;
+    setState(() {});
   }
 }
 

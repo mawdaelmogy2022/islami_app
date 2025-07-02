@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
     AppImages.radiobg,
     AppImages.azkarbg,
   ];
-  List<Widget> tapsBody = const [
+  List<Widget> tapsBody = [
     QuranTap(),
     HadethBody(),
     TasbeehBody(),

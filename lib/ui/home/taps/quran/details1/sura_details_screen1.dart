@@ -96,9 +96,9 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen1> {
     );
   }
 
-  loadFileContent(int index) async {
+  void loadFileContent(int index) async {
     String fileContent =
-        await rootBundle.loadString('assets/files/${index + 1}.txt');
+        await rootBundle.loadString('assets/files/quran/${index + 1}.txt');
     List<String> lines = fileContent
         .split('\n')
         .map((line) => line.trim()) // شيل المسافات من أول وآخر السطر

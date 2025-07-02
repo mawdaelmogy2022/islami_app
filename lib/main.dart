@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.dark,
-      theme: AppTheme.dartheme,
+      darkTheme: AppTheme.dartheme,
       initialRoute: OnBoardingPage.routeName,
       routes: {
         OnBoardingPage.routeName: (context) => const OnBoardingPage(),

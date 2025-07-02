@@ -68,10 +68,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       icon: buildBottomNavigationItem(1, AppImages.iconhadeth),
                       label: 'Hadith'),
                   BottomNavigationBarItem(
-                      icon: buildBottomNavigationItem(2, AppImages.iconradio),
+                      icon: buildBottomNavigationItem(2, AppImages.icontasbeeh),
                       label: 'Tasbeeh'),
                   BottomNavigationBarItem(
-                      icon: buildBottomNavigationItem(3, AppImages.icontasbeeh),
+                      icon: buildBottomNavigationItem(3, AppImages.iconradio),
                       label: 'Radio'),
                   BottomNavigationBarItem(
                       icon: buildBottomNavigationItem(4, AppImages.iconazkar),

@@ -17,6 +17,11 @@ class AppStyle {
     color: AppColors.whiteColor,
     fontSize: 14,
   );
+  static TextStyle white36 = const TextStyle(
+    fontFamily: 'Janna LT',
+    color: AppColors.whiteColor,
+    fontSize: 36,
+  );
   static TextStyle black24 = const TextStyle(
     fontFamily: 'Janna LT',
     color: AppColors.blackColor,

@@ -32,4 +32,5 @@ class AppImages {
       'assets/images/hadith_item_background.png';
   static const String nosoundplayImage = 'assets/images/nosoundplay_image.png';
   static const String soundplayImage = 'assets/images/soundplay_image.png';
+  static const String sebhaImage = 'assets/images/Sebha.png';
 }
